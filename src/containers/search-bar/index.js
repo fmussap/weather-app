@@ -2,10 +2,9 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { inputSearchBar, fetchWeather } from 'actions'
+import { fetchWeather } from 'actions'
 
 const SearchBar = ({ handleSearch, weather }) => {
-  console.log('weather', weather)
   return (
     <form className='input-group' onSubmit={handleSearch}>
       <input
@@ -23,16 +22,14 @@ const SearchBar = ({ handleSearch, weather }) => {
   )
 }
 
-const mapStateToProps = state => ({
-  value: state.ReducerWeather.inputValue,
-  weather: state.ReducerWeather.cityWeather
+const mapStateToProps = ({ weather }) => ({
+  weather
 })
 
 const mapDispatchToProps = dispatch => ({
   handleSearch: (e) => {
     const city = e.target.searchcity.value
     e.preventDefault()
-    dispatch(inputSearchBar(city))
     dispatch(fetchWeather(city))
     e.target.searchcity.value = ''
   }

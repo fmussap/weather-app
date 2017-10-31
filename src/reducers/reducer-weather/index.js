@@ -2,24 +2,16 @@
 
 import * as actions from 'actions/actions-type'
 
-const INITIAL_STATE = {
-  inputValue: '',
-  cityWeather: {}
-}
+const INITIAL_STATE = []
 
 export default (state = INITIAL_STATE, action) => {
   // console.log('type', action.type)
   switch (action.type) {
-    case actions.INPUT_SEARCH_BAR:
-      return {
-        ...state,
-        inputValue: action.payload
-      }
     case actions.FETCH_WEATHER:
-      return {
+      return [
         ...state,
-        cityWeather: action.payload
-      }
+        action.payload.data
+      ]
   }
   return state
 }

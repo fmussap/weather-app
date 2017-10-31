@@ -11,11 +11,12 @@ import App from './app'
 import reducers from 'reducers'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
+const store = createStoreWithMiddleware(reducers)
 
 const renderApp = (NextApp) => {
   render(
     <AppContainer>
-      <Provider store={createStoreWithMiddleware(reducers)}>
+      <Provider store={store}>
         <NextApp />
       </Provider>
     </AppContainer>,
@@ -28,6 +29,10 @@ renderApp(App)
 if (module.hot) {
   module.hot.accept('./app', () => {
     const NextApp = require('./app').default
+    module.hot.accept('reducers', () => {
+      const nextRootReducer = require('reducers')
+      store.replaceReducer(nextRootReducer)
+    })
     renderApp(NextApp)
   })
 }
