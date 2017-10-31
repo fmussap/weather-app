@@ -4,3 +4,4 @@ npm-debug.log
 coverage
 storybook-static
 src/private/openweathermap-key.js
+src/keys/index.js

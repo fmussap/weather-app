@@ -1,0 +1,2 @@
+export const FETCH_WEATHER = 'FETCH_WEATHER'
+export const INPUT_SEARCH_BAR = 'INPUT_SEARCH_BAR'

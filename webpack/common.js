@@ -90,7 +90,8 @@ module.exports = {
       components: join(paths.src, 'components'),
       utils: join(paths.src, 'utils'),
       reducers: join(paths.src, 'reducers'),
-      containers: join(paths.src, 'containers')
+      containers: join(paths.src, 'containers'),
+      actions: join(paths.src, 'actions')
     }
   }
 }
