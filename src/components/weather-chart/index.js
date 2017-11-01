@@ -12,12 +12,12 @@ const WeatherChart = ({
   avg,
   unit
 }) => (
-  <td>
+  <div>
     <Sparklines height={height} width={width} data={data}>
       <SparklinesReferenceLine type='avg' />
       <SparklinesLine color={color} />
     </Sparklines>
     <div>{avg} {unit}</div>
-  </td>
+  </div>
 )
 export default WeatherChart

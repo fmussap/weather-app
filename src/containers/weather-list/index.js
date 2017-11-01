@@ -25,30 +25,36 @@ const WeatherList = ({ weather }) => {
             lat={lat}
           />
         </td>
-        <WeatherChar
-          height={150}
-          width={210}
-          data={temps}
-          color='blue'
-          avg={average(temps) - 273}
-          unit='°C'
-        />
-        <WeatherChar
-          height={150}
-          width={210}
-          data={pressure}
-          color='grey'
-          avg={average(pressure)}
-          unit='hPa'
-        />
-        <WeatherChar
-          height={150}
-          width={210}
-          data={humidity}
-          color='green'
-          avg={average(humidity)}
-          unit='%'
-        />
+        <td>
+          <WeatherChar
+            height={150}
+            width={210}
+            data={temps}
+            color='blue'
+            avg={average(temps) - 273}
+            unit='°C'
+          />
+        </td>
+        <td>
+          <WeatherChar
+            height={150}
+            width={210}
+            data={pressure}
+            color='grey'
+            avg={average(pressure)}
+            unit='hPa'
+          />
+        </td>
+        <td>
+          <WeatherChar
+            height={150}
+            width={210}
+            data={humidity}
+            color='green'
+            avg={average(humidity)}
+            unit='%'
+          />
+        </td>
       </tr>
     )
   }
